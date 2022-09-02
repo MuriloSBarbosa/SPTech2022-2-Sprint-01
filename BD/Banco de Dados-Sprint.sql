@@ -2,7 +2,7 @@
 
 create database sprint01;
 
-use sprint1;
+use sprint01;
 
 -- Comandos DDL
 
