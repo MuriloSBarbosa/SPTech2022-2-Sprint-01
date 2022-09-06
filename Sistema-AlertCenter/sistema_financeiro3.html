@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Financeiro</title>
-    <link rel="stylesheet" href="/Sistema-AlertCenter/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 
 <body>
     <div class="nav">
         <div class="logo">
-            <img src="/Protótipos/LOGO_ONDATA.png" alt="">
+            <img src="../Protótipos/LOGO_ONDATA.png" alt="">
         </div>
         <div class="links">
             <ul>
@@ -22,7 +22,7 @@
                 <li><a href="">Serviços</a></li>
                 <li><a href="">Equipe</a></li>
                 <li><a href="">Contato</a></li>
-                <li><a href="">Orçamento</a></li>
+                <li><a href="" class="orcar" style="color: rgb(10, 13, 221);">Orçamento</a></li>
                 <li><a href="" class="a_login">Login</a></li>
             </ul>
         </div>
@@ -36,10 +36,10 @@
             <h2>Orçamento</h2>
         </div>
         <div class="imagem">
-            <img src="/Sistema-AlertCenter/img/calc1.png" alt="">
+            <img src="img/calc1.png" alt="">
         </div>
         <div class="questoes">
-            <p>Quantos Racks possui seu DataCenter: </p><input type="number" id="in_qtdHack"> <br>
+            <p>Quantos Racks possui seu DataCenter: </p><input type="number" id="in_qtdRack"> <br>
             <p>Selecione o Tier do seu DataCenter: </p>
             <select name="racks" id="in_tier">
                 <option value="1">Tier 1</option>
@@ -47,8 +47,6 @@
                 <option value="3">Tier 3</option>
                 <option value="4">Tier 4</option>
             </select>
-
-            <p>Qual seu valor limite mensalmente: </p><input type="number" id="in_precoMax" placeholder="R$">
             <br>
             <button onclick="calc_financa()">Calcular Finanças</button>
 
@@ -56,39 +54,41 @@
 
     </div>
     <div class="resultado" id="result">
-        <div id="div_resultado" class="result"> <h2 style="margin: 30px 0;"> Resultado </h2></div>
+        <div id="div_resultado" class="result">
+            <h2 style="margin: 30px 0;"> Resultado </h2>
+        </div>
     </div>
 </body>
 
 </html>
 <script>
-    // Murilo
-    function darktheme() {
-        if (document.getElementById('mumu').innerHTML === 'Murilo') {
-            document.body.style.background = '#555';
-            document.body.style.color = 'white';
-            document.getElementById('mumu').innerHTML = 'Light';
-        } else {
-            document.body.style.background = 'white';
-            document.body.style.color = '#555';
-            document.getElementById('mumu').innerHTML = 'Murilo';
-        }
-    }
+    // // Murilo
+    // function darktheme() {
+    //     if (document.getElementById('mumu').innerHTML === 'Murilo') {
+    //         document.body.style.background = '#222';
+    //         document.body.style.color = 'white';
+    //         document.getElementById('mumu').innerHTML = 'Light';
+    //     } else {
+    //         document.body.style.background = 'white';
+    //         document.body.style.color = '#222';
+    //         document.getElementById('mumu').innerHTML = 'Murilo';
+    //     }
+    // }
 
 
 
 
 
     function calc_financa() {
-      
+
 
         // Qtd de arduino
-        var qtdHack = Number(in_qtdHack.value);
+        var qtdRack = Number(in_qtdRack.value);
 
         var tier = in_tier.value;
 
         //6 sensores por arduino, definindo quantos arduinos tem
-        var qtdArduino = Math.ceil(qtdHack / 6);
+        var qtdArduino = Math.ceil(qtdRack / 6);
 
         //150 reais por arduino (preço do produto)
         var Arduino = (150 * qtdArduino);
@@ -132,62 +132,56 @@
         // Economia por ano
         var economiaAno = paralisacaoAno - ((precoProjeto * 11) + precoProjeto1);
 
-        // Preço máximo que pode gastar
-        var precoMax = Number(in_precoMax.value);
-
-        // Orçamento do cliente
-        var orcamento = precoMax - precoProjeto1;
-
-
 
         // Frases do orçamento
-        if (qtdHack == 0 | precoMax == 0) {
+        if (qtdRack == 0) {
             alert("Por favor, insira um valor maior que zero !");
 
         } else {
-            if (tier != "1" && tier != "2" && tier != "3" && tier != "4") {
-                alert("Insira um Tier disponível!")
+            if (qtdRack > 80000) {
+                alert("Por favor, limite a quantidade de Racks para 80000")
             } else {
-                if (precoMax < precoProjeto) {
-                    var frase = `Pelo seu orçamento, faltam R$${-orcamento}.00 para começarmos essa jornada!`;
-                } else if (precoMax == precoProjeto) {
-                    var frase = `Pelo seu oçamento, estamos exatamente de acordo!`;
+                if (tier != "1" && tier != "2" && tier != "3" && tier != "4") {
+                    alert("Insira um Tier disponível!")
                 } else {
-                    var frase = `Pelo seu orçamento, estamos de acordo e ainda sombram R$${orcamento}.00!`;
-                }
 
-                div_resultado.innerHTML =
-                    `
 
-                <div class="sistema">
-                    Considerando que um arduino suporta até 6 sensores, você precisa de ${qtdArduino} arduino(s).<br><br>
+                    div_resultado.innerHTML =
+                        `
+
+                <div class="sistema card">
+                   Custo de Instalação: <br><br>
+                   <b>R$150,00</b> por unidade de arduino e R$100 da instalação individual<br><br>
+                    <b>R$${instalacao},00</b><br><br>
                 </div>
 
-                <div class="sistema">
-                    A um custo médio de <b>R$150,00</b> por unidade de arduino e R$100 da instalação individual, você desembolsará <b>R$${instalacao},00</b> para implementação do Projeto.<br><br>
+                <div class="conta card">
+                    A cada 30 minutos de paralisação você perde R$${paralisacao}. <br> <br>
+                    Se você tiver 1 downtime por semana: <br>
+                    um mês você perderá <b>R$${paralisacaoMes},00</b> <br>
+                    Em um ano <b>R$${paralisacaoAno},00</b>!. <br><br>
+                </div>
+
+                <div class="alegria card">
+                    Custo do nosso projeto:<br><br>
+                    <b>R$${precoProjeto1},00</b> no primeiro mês (mensal + instalação)<br>
+                     Apenas <b>R$${precoProjeto},00</b> nos próximos!<br><br>
+                </div>
+
+                <div class="alegria2 card">
+                    Economia: <br><br>
+                    Ao todo você evitará e economizará <br>
+                    <b>R$${economiaMes1},00</b> no primeiro mês,<br>
+                     <b>R$${economiaMes},00</b> nos próximos meses <br>
+                      <b>R$${economiaAno},00</b> por ano! <br><br>
                 </div>
 
                 <div class="pesquisa">
-                    De acordo com a pesquisa <i>"Understainding the cost of data center downtime"</i> cada minuto de paralisação de um Data Center custa <b>U$5600,00</b>.<br><br>
+                    De acordo com a pesquisa <i>"Understainding the cost of data center downtime"</i> o minuto de paralisação de um Data Center custa <b>U$5600,00</b>.<br><br>
                 </div>
 
-                <div class="conta">
-                    A cada 30 minutos de paralisação você perde R$${paralisacao}. <br> <br>
-                    Passando esse número para reais, e supondo que em uma má gestão da temperatura e umidade você pode ter 1 downtime por semana, em um mês você perderá <b>R$${paralisacaoMes},00</b> e em um ano <b>R$${paralisacaoAno},00</b>!. <br><br>
-                </div>
-
-                <div class="alegria">
-                    Isso tudo pode ser evitado. Com o nosso projeto, esse gasto passará para <b>R$${precoProjeto1},00</b> no primeiro mês (mensal + instalação) e apenas <b>R$${precoProjeto},00</b> nos próximos!<br><br>
-                </div>
-
-                <div class="alegria2">
-                    Ao todo você evitará e economizará <b>R$${economiaMes1},00</b> no primeiro mês, <b>R$${economiaMes},00</b> nos próximos meses e <b>R$${economiaAno},00</b> por ano! <br><br>
-                </div>
-                
-                <div class="orcamento">
-                    <b>${frase}</b>
-                </div>
                 `
+                }
             }
         }
     }

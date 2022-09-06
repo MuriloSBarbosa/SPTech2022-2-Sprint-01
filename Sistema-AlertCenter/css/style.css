@@ -64,8 +64,15 @@
     transition: all 1s;
 }
 
+.nav .orcar{
+    border-bottom: 2px rgb(10, 13, 221) solid;
+}
+.nav .orcar:hover{
+    text-decoration: none !important;
+}
 
-/* Botão de tema escuro */
+
+/* Botão de tema escuro
 .murilo {
     width: 60px;
     height: 30px;
@@ -77,7 +84,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 
 /* Simulador */
@@ -160,22 +167,20 @@ select:focus {
 /* Resposta do Simulador */
 
 .resultado {
-    width: 80%;
-    margin: 20px auto;
+    width: 90%;
+    margin: 100px auto;
     padding: 10px 0;
-    background-color: rgba(0, 68, 196, 0.33);
-    /* display: none; */
+    border-radius: 10px;
+    background-color: #aaa;
 }
 
 .result {
-    width: 80%;
-    height: 500px;
+    /* width: 80%; */
     margin: 20px auto;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     text-align: center;
 }
 
@@ -190,7 +195,9 @@ select:focus {
 
 
 
-
+.card {
+    width: 100%;
+}
 
 /* Estilos do Murilo */
 .sistema {
@@ -210,7 +217,7 @@ select:focus {
 }
 
 .alegria2 {
-    color: rgb(0, 189, 50);
+    color: rgb(0, 85, 23);
 }
 
 .orcamento {
