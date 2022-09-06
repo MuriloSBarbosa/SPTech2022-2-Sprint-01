@@ -55,49 +55,32 @@
         </div>
 
     </div>
-    <div id="div_resultado" class="result"></div>
+    <div class="resultado" id="result">
+        <div id="div_resultado" class="result"> <h2 style="margin: 30px 0;"> Resultado </h2></div>
+    </div>
 </body>
 
 </html>
 <script>
-// Murilo
-function darktheme() {
-    if (document.getElementById('mumu').innerHTML==='Murilo') {
-        document.body.style.background='#555';
-        document.body.style.color='white';
-        document.getElementById('mumu').innerHTML='Light';
-    } else {
-        document.body.style.background='white';
-        document.body.style.color='#555';
-        document.getElementById('mumu').innerHTML='Murilo';
+    // Murilo
+    function darktheme() {
+        if (document.getElementById('mumu').innerHTML === 'Murilo') {
+            document.body.style.background = '#555';
+            document.body.style.color = 'white';
+            document.getElementById('mumu').innerHTML = 'Light';
+        } else {
+            document.body.style.background = 'white';
+            document.body.style.color = '#555';
+            document.getElementById('mumu').innerHTML = 'Murilo';
+        }
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
     function calc_financa() {
+      
 
         // Qtd de arduino
         var qtdHack = Number(in_qtdHack.value);
