@@ -6,47 +6,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Financeiro</title>
+    <link rel="stylesheet" href="/Sistema-AlertCenter/css/style.css">
 </head>
 
-<style>
-    .sistema {
-        color: black;
-    }
-
-    .pesquisa {
-        color: blue;
-    }
-
-    .conta {
-        color: red;
-    }
-
-    .alegria {
-        color: rgb(174, 0, 255);
-    }
-
-    .alegria2 {
-        color: rgb(0, 189, 50);
-    }
-
-    .orcamento {
-        font-size: larger;
-    }
-</style>
 
 <body>
-    <h2>Sistema Financeiro</h2>
-    Digite quantos Hacks você têm em seu DataCenter: <br><input type="text" id="in_qtdHack"> <br>
-    Digite qual o tier do seu DataCenter (1 a 4): <br><input type="text" id="in_tier"> <br>
-    Digite qual o preço máximo que você pode gastar por mês:<br><input type="text" id="in_precoMax">
-    <br><br>
-    <button onclick="calc_financa()">Calcular Finanças</button>
-    <div id="div_resultado"></div>
+    <div class="nav">
+        <div class="logo">
+            <img src="/Protótipos/LOGO_ONDATA.png" alt="">
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Quem Somos</a></li>
+                <li><a href="">Serviços</a></li>
+                <li><a href="">Equipe</a></li>
+                <li><a href="">Contato</a></li>
+                <li><a href="">Orçamento</a></li>
+                <li><a href="" class="a_login">Login</a></li>
+            </ul>
+        </div>
+    </div>
 
+    <div class="murilo" id="mumu" onclick="darktheme()"></div>
+
+    <!-- Simulador -->
+    <div class="geral">
+        <div class="titulo">
+            <h2>Orçamento</h2>
+        </div>
+        <div class="imagem">
+            <img src="/Sistema-AlertCenter/img/calc1.png" alt="">
+        </div>
+        <div class="questoes">
+            <p>Quantos Racks possui seu DataCenter: </p><input type="number" id="in_qtdHack"> <br>
+            <p>Selecione o Tier do seu DataCenter: </p>
+            <select name="racks" id="in_tier">
+                <option value="1">Tier 1</option>
+                <option value="2">Tier 2</option>
+                <option value="3">Tier 3</option>
+                <option value="4">Tier 4</option>
+            </select>
+
+            <p>Qual seu valor limite mensalmente: </p><input type="number" id="in_precoMax" placeholder="R$">
+            <br>
+            <button onclick="calc_financa()">Calcular Finanças</button>
+
+        </div>
+
+    </div>
+    <div id="div_resultado" class="result"></div>
 </body>
 
 </html>
 <script>
+// Murilo
+function darktheme() {
+    if (document.getElementById('mumu').innerHTML==='Murilo') {
+        document.body.style.background='#555';
+        document.body.style.color='white';
+        document.getElementById('mumu').innerHTML='Light';
+    } else {
+        document.body.style.background='white';
+        document.body.style.color='#555';
+        document.getElementById('mumu').innerHTML='Murilo';
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function calc_financa() {
 
         // Qtd de arduino
@@ -97,7 +147,7 @@
         var economiaMes = paralisacaoMes - precoProjeto;
 
         // Economia por ano
-        var economiaAno = paralisacaoAno - ((precoProjeto*11) + precoProjeto1);
+        var economiaAno = paralisacaoAno - ((precoProjeto * 11) + precoProjeto1);
 
         // Preço máximo que pode gastar
         var precoMax = Number(in_precoMax.value);
