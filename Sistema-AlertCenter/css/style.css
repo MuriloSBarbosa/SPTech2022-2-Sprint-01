@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxanium';
+}
+
+/* NavBar */
+.nav {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav .logo {
+    width: 35%;
+    float: left;
+}
+
+.nav .logo img {
+    margin-left: 100px;
+    width: 40%;
+    height: 40px;
+}
+
+.nav .links {
+    width: 65%;
+    float: right;
+}
+
+.nav .links ul li {
+    list-style-type: none;
+    display: inline;
+    margin: 0 20px;
+}
+
+.nav .links ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: large;
+}
+
+.nav .links ul li a:hover {
+    color: rgb(0, 14, 145);
+    text-decoration: underline;
+}
+
+.nav .links .a_login {
+    margin: 0;
+    padding: 10px 20px;
+    border: 2px rgb(59, 62, 247) solid;
+    color: rgb(59, 62, 247);
+    border-radius: 5px;
+    transition: all 1s;
+}
+
+.nav .links .a_login:hover {
+    background-color: rgb(59, 62, 247);
+    color: #fff;
+    transition: all 1s;
+}
+
+.nav .orcar{
+    border-bottom: 2px rgb(10, 13, 221) solid;
+}
+.nav .orcar:hover{
+    text-decoration: none !important;
+}
+
+
+/* Botão de tema escuro
+.murilo {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #aaa;
+    position: absolute;
+    z-index: 1;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/* Simulador */
+.geral {
+    width: 60%;
+    height: 420px;
+    margin: 25px auto;
+    background-color: rgb(10, 13, 221);
+    border-radius: 10px;
+}
+
+.geral .titulo {
+    padding: 20px 40px;
+    color: #fff;
+    font-size: 25px;
+    width: 100px;
+}
+
+.geral .imagem {
+    width: 50%;
+    float: left;
+}
+
+.geral .imagem img {
+    width: 28%;
+    height: 62%;
+    position: absolute;
+}
+
+.geral .questoes {
+    width: 50%;
+    height: 200px;
+    float: right;
+    text-align: left;
+}
+
+.geral .questoes p {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.geral .questoes input,
+select {
+    width: 50%;
+    height: 25px;
+    margin: 10px 0 25px;
+    color: #fff;
+    font-size: large;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0 solid;
+    border-bottom: 3px rgb(59, 62, 247) solid;
+}
+
+.geral .questoes select option {
+    color: black;
+}
+
+.geral .questoes input:focus,
+select:focus {
+    outline: 0;
+}
+
+.geral .questoes input::placeholder {
+    color: #fff;
+}
+
+.geral .questoes button {
+    width: 45%;
+    height: 45px;
+    margin-bottom: 40px;
+    background-color: rgb(59, 62, 247);
+    border: 0;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 17px;
+}
+
+
+
+/* Resposta do Simulador */
+
+.resultado {
+    width: 90%;
+    margin: 100px auto;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: #aaa;
+}
+
+.result {
+    /* width: 80%; */
+    margin: 20px auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+    width: 100%;
+}
+
+/* Estilos do Murilo */
+.sistema {
+    color: black;
+}
+
+.pesquisa {
+    color: blue;
+}
+
+.conta {
+    color: red;
+}
+
+.alegria {
+    color: rgb(174, 0, 255);
+}
+
+.alegria2 {
+    color: rgb(0, 85, 23);
+}
+
+.orcamento {
+    font-size: larger;
+}

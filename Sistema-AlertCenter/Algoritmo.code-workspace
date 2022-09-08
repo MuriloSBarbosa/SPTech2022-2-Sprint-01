@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../Algoritmo"
+		},
+		{
+			"path": "../../../../otarios"
+		},
+		{
+			"path": "../../../../SimuladorFinanceiro"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "SimuladorFinanceiro"
+	}
+}
