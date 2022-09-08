@@ -1,4 +1,4 @@
-- Protótipo Site Institucional (incompleto)
-- Tela de orçamento (incompleto)
-- Tela de cadastro (pendente)
+- Protótipo Site Institucional (finalizado)
+- Tela de orçamento (finalizado)
+- Tela de cadastro (finalzado)
 - Logos (finalizado)
